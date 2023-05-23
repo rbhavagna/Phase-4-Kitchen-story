@@ -1,0 +1,59 @@
+<!-- <div class="container"style="padding-bottom: 23rem;">
+    <h1 class="pt-5 pb-5" style="font-weight:bold">Product List</h1>
+    <div class=" table-wrapper-scroll-y my-custom-scrollbar table-responsive">
+      
+      <p class="alert alert-danger" id="messages"></p>
+   
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th class="text-center" scope="col">Product ID</th>
+            <th class="text-center" scope="col">Product Name</th>
+            <th class="text-center" scope="col">Product Price</th>
+            <th class="text-center" scope="col">Product Catrgory</th>
+            <th class="text-center" scope="col">Product Description</th>
+            <th class="text-center" scope="col">Product Brand</th>
+            <th class="text-center" scope="col">Product Color</th>
+            <th class="text-center" scope="col">Product Material</th>
+            <th class="text-center" scope="col">Product Dimesion</th>
+            <th class="text-center" scope="col">Product Image</th>
+
+            
+          </tr>
+        </thead>
+        <tbody>
+          
+          
+            <tr *ngFor="let order  orderDetails" class="">
+            <td class="text-center">{{order.id}}</td>
+            <td class="text-center">{{order.orderName}}</td>
+            <td class="text-center">₹ {{order.price}}</td>
+            <td class="text-center">{{order.category}}</td>
+            <td class="text-center">{{order.productDes}}</td>
+            <td class="text-center text-wrap" style="width: 5px;"><img src="{{order.url}}"></td>
+            
+          
+            
+            </tr>
+          </tbody>
+      </table>
+    </div> 
+  </div> -->
+
+  <div class="container text-center ">
+
+  <div class="card mx-auto" style="width: 50rem;margin-top: 150px;">
+    <div class="card-body" *ngFor="let productData of orderDetails">
+      <h1 class="card-title text-white bg-success p-3"  >Order Sucessfully Placed</h1>
+      <p>Your Order Will Be deliverd in 30 minutes</p>
+      <h2 class="card-text">Your Order Detail is</h2>
+      <ul class="list-group list-group-flush" style="border: none;">
+        <li class="list-group-item"  style="border: none;">{{productData.hotelName}}</li>
+        <li class="list-group-item"  style="border: none;">{{productData.foodName}}</li>
+        <li class="list-group-item"  style="border: none;">Price:- {{productData.price}}</li>
+        <li class="list-group-item"  style="border: none;">Address :-{{productData.address}}</li>
+        <li class="list-group-item" style="border: none;">Order Date:-   {{productData.date | date}}</li>
+      </ul>
+    </div>
+  </div>
+  </div>

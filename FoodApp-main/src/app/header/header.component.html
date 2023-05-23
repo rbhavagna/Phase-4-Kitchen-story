@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Kitchen Story</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li> 
+          </ul>
+          </div>
+          <div class="flex-grow-1 d-flex">
+   
+            <input style="text-align:center; margin-right: 250px; " class="form-control" type="search" placeholder="Search products" aria-label="Search" value="Search Products" [(ngModel)]="searchTerm" (keyup)="search($event)">
+        
+        </div>
+          <a routerLink="/login" type="button" class="btn btn-danger">Admin Login</a>
+      </nav>
+ </div> 
+ 
+
+
+ <div class="row">
+  <div class="col-sm-2"   *ngFor="let pr of product | filter:searchKey:'category'">
+ <div class="card-group" style="padding: 20px;">
+  <div class="card " style="box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2)">
+    <img class="card-img-top" src="{{pr.url}}" alt="Card image cap" style="max-width: 100%;">
+    <div class="card-body">
+      <h3 class="card-title">{{pr.foodName}}</h3>
+      <p class="card-text"></p>
+    </div>
+    <div class="card-footer">
+      <h2 class="card-footer">₹ {{pr.price}}</h2>
+      <button type="button"  class="btn btn-outline-primary btn-sm" routerLink="/productDetail/{{pr.id}}">View</button>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+
+

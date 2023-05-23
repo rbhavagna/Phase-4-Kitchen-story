@@ -1,0 +1,66 @@
+<h1 mat-dialog-title>Place your Order</h1>
+<div mat-dialog-content>
+  <form [formGroup]="buyProductForm">
+    <div class="example-container">
+        <mat-form-field appearance="fill" >
+          <mat-label>Card Number</mat-label>
+          <input formControlName="cardNumber" matInput type="number" matInput placeholder="xxxx-xxxx-xxxx-xxxx">
+          <mat-error>
+            card number invalid
+          </mat-error>
+        </mat-form-field>
+    
+    
+          <mat-form-field appearance="fill">
+            <mat-label>Card Name</mat-label>
+            <input formControlName="cardName" matInput type="text" >
+           </mat-form-field>
+    </div>
+    <div class="example-container">
+           <mat-form-field appearance="fill" >
+            <mat-label>Expiry</mat-label>
+            <input formControlName="expiry" matInput type="number"  matInput placeholder="11/12">
+           </mat-form-field>
+        
+           <mat-form-field appearance="fill" >
+            <mat-label>cvv</mat-label>
+            <input formControlName="cvv" matInput type="number" type="password" matInput placeholder="***">
+           </mat-form-field>
+    </div>     
+     <div class="example-container" let row >  
+           <mat-form-field appearance="fill">
+            <mat-label>Price</mat-label>
+            <input formControlName="price"ame="price"  matInput type="number" >
+           </mat-form-field>
+    
+           <mat-form-field color="accent" appearance="fill" [hidden]="true">
+            <mat-label>Date</mat-label>
+            <input matInput [matDatepicker]="picker2" formControlName="date">
+            
+            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+          </mat-form-field>
+
+           <mat-form-field appearance="fill">
+            <mat-label>ProductName</mat-label>
+            <input formControlName="hotelName"name="hotelName" matInput type="text" >
+           </mat-form-field>
+</div>
+           <mat-form-field appearance="fill" style="width: 100%;">
+            <mat-label>Delivery Address</mat-label>
+            <textarea formControlName="address" matInput type="text" ></textarea>
+           </mat-form-field>
+     
+    
+      </form>
+     
+    
+      
+      </div>
+      <div mat-dialog-action [align]="'end'">
+        <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+        <button mat-raised-button color="primary" (click)="buyProduct()" >Order</button>
+      </div>
+
+    
+

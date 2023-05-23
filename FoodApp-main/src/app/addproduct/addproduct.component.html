@@ -1,0 +1,48 @@
+<h1 mat-dialog-title>Add Products</h1>
+<div mat-dialog-content>
+  <form [formGroup]="productForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Hotel Name</mat-label>
+      <input formControlName="hotelName"  matInput type="text">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>category</mat-label>
+      <select matNativeControl required formControlName="category">
+        <option value="Biryani">Biryani</option>
+        <option value="Cake">Cake</option>
+        <option value="Noodles">noodles</option>
+        <option value="Thali">Thali</option>
+      </select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Food Name</mat-label>
+      <input formControlName="foodName"  matInput type="text">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>FoodDetail</mat-label>
+        <input formControlName="foodDetail"  matInput type="text">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Price</mat-label>
+          <input formControlName="price"  matInput type="number">
+          </mat-form-field>
+      
+          <mat-form-field appearance="fill" width="100%">
+            <mat-label>Image</mat-label>
+            <input formControlName="url"  matInput type="text">
+            </mat-form-field>
+      
+             
+               
+             
+    
+      </form>
+      </div>
+      <div mat-dialog-action [align]="'end'">
+        <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+        <button mat-raised-button color="primary" (click)="addProduct()" >{{btn}}</button>
+      </div>
+
+    
+
